@@ -1,5 +1,5 @@
 import { useState, createContext } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import router from '../routing/routing-config';
 
 export const AppConfig = createContext();
@@ -19,9 +19,9 @@ function Root() {
 
         <AppConfig.Provider value={{ appConfig, changeConfig }}>
             <div className={`theme theme-${appConfig.theme}`}>
-                <BrowserRouter>
+                <HashRouter>
                     {router}
-                </BrowserRouter>
+                </HashRouter>
             </div>
         </AppConfig.Provider >
 
