@@ -20,7 +20,7 @@ function Pagination({ pagination, onPageChange, onPageSizeChanged }) {
                     >{item}
                     </li>)
             }
-            return <li className="dots" key={item}>{item}</li>
+            return <li className="dots" key={Math.random()}>{item}</li>
         }
     );
     const sizeOptions = allowedPageSizes.map(e => <option value={e}>{e}</option>)
