@@ -24,6 +24,9 @@ function Pagination({ pagination, onPageChange, onPageSizeChanged }) {
         }
     );
     const sizeOptions = allowedPageSizes.map(e => <option value={e}>{e}</option>)
+    if (total <= 0) {
+        return;
+    }
     return (
         <>
             <div className='pagination-container'>
