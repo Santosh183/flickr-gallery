@@ -7,9 +7,6 @@ import RecentPhotos from '../app-components/recent-photos';
 import TaggedPhotos from '../app-components/tagged-photos';
 import PageNotFound from '../generic-components/page-not-found';
 
-
-// /tagged?search=aa&items_per_page=12&page=1&tags=tag1,tag2
-// /recent?items_per_page=12&page=1
 const router = (
     <>
         <NavBar />

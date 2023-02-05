@@ -1,17 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-regular-svg-icons'
+
 
 function Photo({ photo }) {
-    /* <a href="/images/dada.jpg" download></a> */
-
-    function createUrl() {
-        return '';
-    }
+    const { server, id, secret } = photo;
 
     return (
-        <div>
-            <img src={createUrl} />
-            <FontAwesomeIcon icon={faDownload} />
+        <div className="image-card">
+            <img height="100%" width="100%" src={`https://live.staticflickr.com/${server}/${id}_${secret}_w.jpg`} alt={'flickr-pic'} />
         </div>
     );
 }

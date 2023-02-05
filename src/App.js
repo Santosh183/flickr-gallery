@@ -1,14 +1,11 @@
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
-import router from './routing/routing-config';
-import Pagination from './generic-components/pagination';
+
+import Root from './app-components/Root';
+
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        {router}
-      </BrowserRouter>
-      <Pagination />
+      <Root />
     </div>
   );
 }
