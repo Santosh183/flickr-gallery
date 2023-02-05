@@ -1,3 +1,11 @@
+# flickr-gallery
+Simple gallery which fetch photos form flickr APIs.
+One can search with tag or simply see recently uploaded photos.
+Can see demo  here: https://santosh183.github.io/flickr-gallery/
+
+# Hands on for :
+create-react-app, react-router, contexts, UI side pagination, light/dark theme, responsive design
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +76,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# flickr-gallery
+
