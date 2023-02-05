@@ -1,3 +1,4 @@
+import '../component-styles/loader.css';
 
 function Loader() {
     return (

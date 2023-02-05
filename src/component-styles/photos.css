@@ -1,0 +1,49 @@
+div.photos {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    width: 80%;
+    margin: 0 auto;
+}
+
+div.image-card {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+div.image-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+div.image-card:hover img {
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    div.photos {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: auto;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    div.image-card img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    div.image-card:hover img {
+        transform: none;
+    }
+}

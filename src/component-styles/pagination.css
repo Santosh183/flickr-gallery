@@ -1,0 +1,123 @@
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+ul.pagination {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0px;
+}
+
+ul.pagination li {
+    cursor: pointer;
+    border: 1px solid var(--dark-background);
+    border-radius: 50%;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+    ul.pagination li {
+        border: 1px solid var(--light-background);
+    }
+}
+
+.theme-dark ul.pagination li {
+    border: 1px solid var(--light-background);
+}
+
+@media (prefers-color-scheme: dark) {
+    .theme-dark ul.pagination li {
+        border: 1px solid var(--dark-background);
+    }
+}
+
+
+ul.pagination li.dots {
+    border: none;
+}
+
+ul.pagination li:hover,
+ul.pagination li.active {
+    background: var(--dark-background);
+    color: var(--dark-color);
+}
+
+.theme-dark ul.pagination li.active,
+.theme-dark ul.pagination li:hover {
+    background: var(--light-background);
+    color: var(--light-color);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .theme-auto ul.pagination li:hover,
+    .theme-auto ul.pagination li.active {
+        background: var(--dark-background);
+        color: var(--dark-color);
+    }
+}
+
+ul.pagination li.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .pagination-container .page-size {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pagination-container select {
+        width: 60px;
+    }
+
+    ul.pagination {
+        gap: 5px;
+    }
+
+    ul.pagination li {
+        padding: 5px;
+        height: 15px;
+        width: 15px;
+        font-size: 10px;
+    }
+
+    .theme-dark ul.pagination li.active,
+    .theme-dark ul.pagination li:hover {
+        background: var(--light-background);
+        color: var(--light-color);
+    }
+
+    .theme-dark ul.pagination li {
+        border: 1px solid var(--light-background);
+    }
+}
+
+@media only screen and (max-width: 768px) and (prefers-color-scheme: dark) {
+
+    .theme-auto ul.pagination li.active,
+    .theme-auto ul.pagination li:hover {
+        background: var(--light-background);
+        color: var(--light-color);
+    }
+
+    .theme-auto ul.pagination li {
+        border: 1px solid var(--light-background);
+    }
+}

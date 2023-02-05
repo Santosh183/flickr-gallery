@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { usePagination } from '../custom-hooks/usePagination'
+import '../component-styles/pagination.css';
+
 
 function Pagination({ pagination, onPageChange, onPageSizeChanged }) {
     const { total, per_page, sibling_count, page } = pagination;

@@ -1,0 +1,133 @@
+.search-container {
+    height: 35px;
+    width: 25%;
+    margin: 15px auto;
+    display: flex;
+    border: 1px solid var(--dark-background);
+}
+
+.theme-dark .search-container {
+    border: 1px solid var(--light-background);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .theme-auto .search-container {
+        border: 1px solid var(--light-background);
+    }
+}
+
+.search-container input {
+    height: 100%;
+    width: 90%;
+    margin: 0px;
+    padding: 0px 10px;
+    border: none;
+    outline: none;
+}
+
+.search-container input:hover {
+    border: none;
+    outline: none;
+}
+
+.search-container button {
+    width: 15%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: var(--dark-background);
+    color: var(--dark-color);
+    padding: 0px 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.theme-dark .search-container button {
+    background: var(--light-background);
+    color: var(--light-color);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .theme-auto .search-container button {
+        background: var(--light-background);
+        color: var(--light-color);
+    }
+}
+
+.theme-dark h2.header {
+    color: var(--dark-color);
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .search-container {
+        height: 35px;
+        width: 70%;
+        margin: 15px auto;
+        display: flex;
+        border: 1px solid var(--dark-background);
+    }
+
+    .theme-dark .search-container {
+        border: 1px solid var(--light-background);
+    }
+
+
+    .search-container input {
+        height: 100%;
+        width: 80%;
+        margin: 0px;
+        padding: 0px 10px;
+        border: none;
+        outline: none;
+    }
+
+    .search-container input:hover {
+        border: none;
+        outline: none;
+    }
+
+    .search-container button {
+        width: 20%;
+        height: 100%;
+        outline: none;
+        border: none;
+        background: var(--dark-background);
+        color: var(--dark-color);
+        padding: 0px 5px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .theme-dark .search-container {
+        background: var(--light-background);
+        color: var(--light-color);
+    }
+
+
+    h2.header {
+        font-size: 20px;
+    }
+
+    .theme-dark h2.header {
+        color: var(--dark-color);
+    }
+}
+
+@media only screen and (max-width: 768px) and (prefers-color-scheme: dark) {
+    .theme-auto .search-container {
+        background: var(--light-background);
+        color: var(--light-color);
+    }
+
+    .theme-auto .search-container {
+        border: 1px solid var(--light-background);
+    }
+
+    .theme-auto h2.header {
+        color: var(--dark-color);
+    }
+}

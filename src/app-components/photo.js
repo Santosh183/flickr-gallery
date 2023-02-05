@@ -1,4 +1,4 @@
-
+import '../component-styles/photos.css';
 
 function Photo({ photo }) {
     const { server, id, secret } = photo;

@@ -8,7 +8,7 @@ import Loader from "../generic-components/loader";
 import Photo from "./photo";
 import Pagination from '../generic-components/pagination';
 
-
+import '../component-styles/photos.css';
 
 function RecentPhotos() {
     const [loading, setLoading] = useState(true);

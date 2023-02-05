@@ -9,6 +9,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Loader from "../generic-components/loader";
 import Photo from "./photo";
 import Pagination from "../generic-components/pagination";
+import '../component-styles/photos.css';
+import '../component-styles/search.css';
 
 
 

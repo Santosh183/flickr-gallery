@@ -14,12 +14,17 @@ function Root() {
         setAppConfig(appConfig);
         localStorage.setItem('theme', appConfig.theme);
     }
+
     return (
+
         <AppConfig.Provider value={{ appConfig, changeConfig }}>
-            <BrowserRouter>
-                {router}
-            </BrowserRouter>
-        </AppConfig.Provider>
+            <div className={`theme theme-${appConfig.theme}`}>
+                <BrowserRouter>
+                    {router}
+                </BrowserRouter>
+            </div>
+        </AppConfig.Provider >
+
     );
 }
 
