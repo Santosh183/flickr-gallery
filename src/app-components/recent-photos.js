@@ -25,6 +25,7 @@ function RecentPhotos() {
         return getRecentPhotos(params);
     }, [searchParams]);
     const { loading, data, error } = useGetPhotos(url);
+    console.log(error);
 
     useEffect(() => {
         if (data) {
@@ -41,7 +42,7 @@ function RecentPhotos() {
         return () => {
             console.log('unmounted');
         }
-    }, [data, pagination.sibling_count])
+    }, [data, pagination.sibling_count, setSearchParams])
 
     const pageChanged = (page) => {
         const tempPagination = {

@@ -2,18 +2,20 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { useState, useContext } from "react";
-import { AppConfig } from '../app-components/Root'
+import { useState } from "react";
+import { useSelector } from 'react-redux/es/exports';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import '../component-styles/navbar.css';
 
 function NavBar() {
     const [active, setActive] = useState(false);
     const toggleMenu = () => setActive(!active);
-    const { appConfig, changeConfig } = useContext(AppConfig);
+    const theme = useSelector(state => state.theme);
+    const dispatch = useDispatch();
 
     const changeMode = (mode) => {
         toggleMenu();
-        changeConfig({ theme: mode });
+        dispatch({ type: 'change', payload: mode })
     }
 
     return (
@@ -41,7 +43,7 @@ function NavBar() {
                 <li>
                     <div className="mode">
                         Mode:
-                        <select onChange={(e) => changeMode(e.target.value)} value={appConfig.theme}>
+                        <select onChange={(e) => changeMode(e.target.value)} value={theme}>
                             <option value="">--select--</option>
                             <option value="light">light</option>
                             <option value="dark">dark</option>

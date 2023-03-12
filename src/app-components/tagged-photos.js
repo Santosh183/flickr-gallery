@@ -35,6 +35,7 @@ function TaggedPhotos() {
         return getTaggedPhotos(params);
     }, [searchParams]);
     const { loading, data, error } = useGetPhotos(url);
+    console.log(error);
 
     useEffect(() => {
         if (data) {
@@ -51,7 +52,7 @@ function TaggedPhotos() {
         return () => {
             console.log('unmounted');
         }
-    }, [data, pagination.sibling_count, searchParams])
+    }, [data, pagination.sibling_count, searchParams, setSearchParams])
 
     const onSearch = (e) => {
         e.preventDefault();
