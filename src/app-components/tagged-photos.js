@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { getTaggedPhotos } from '../flicker-api/flicker-api';
 import {
     useSearchParams
 } from "react-router-dom";
+import useGetPhotos from "../custom-hooks/useGetPhotos";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,7 +16,6 @@ import '../component-styles/search.css';
 
 
 function TaggedPhotos() {
-    const [loading, setLoading] = useState(true);
     const [photos, setPhotos] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const per_page = searchParams.get('per_page') || localStorage.getItem('per_page') || 20;
@@ -26,37 +26,33 @@ function TaggedPhotos() {
     const [searchText, setSearchText] = useState('');
 
 
-    useEffect(
-        () => {
-            const params = {
-                page: searchParams.get('page'),
-                per_page: searchParams.get('per_page'),
-                tags: searchParams.get('tags') || ''
+    const url = useMemo(() => {
+        const params = {
+            page: searchParams.get('page'),
+            per_page: searchParams.get('per_page'),
+            tags: searchParams.get('tags') || ''
+        }
+        return getTaggedPhotos(params);
+    }, [searchParams]);
+    const { loading, data, error } = useGetPhotos(url);
+
+    useEffect(() => {
+        if (data) {
+            setPhotos(data.photos.photo);
+            setSearchParams({ tags: searchParams.get('tags') || '', page: data.photos.page, per_page: data.photos.perpage });
+            const tempPagination = {
+                per_page: data.photos.perpage,
+                page: data.photos.page,
+                total: data.photos.total,
+                sibling_count: pagination.sibling_count
             }
-            getTaggedPhotos(params).then(
-                (res) => {
-                    setPhotos(res.data.photos.photo);
-                    setSearchParams({ tags: params.tags, page: res.data.photos.page, per_page: res.data.photos.perpage });
-                    const tempPagination = {
-                        per_page: res.data.photos.perpage,
-                        page: res.data.photos.page,
-                        total: res.data.photos.total,
-                        sibling_count: pagination.sibling_count
-                    }
-                    setPagination(tempPagination);
-                }
-            ).catch(
-                (err) => {
-                    console.log(err);
-                }
-            ).finally(
-                () => {
-                    setLoading(false);
-                }
-            )
-        },
-        [searchParams, pagination.sibling_count, setSearchParams]
-    )
+            setPagination(tempPagination);
+        }
+        return () => {
+            console.log('unmounted');
+        }
+    }, [data, pagination.sibling_count, searchParams])
+
     const onSearch = (e) => {
         e.preventDefault();
 

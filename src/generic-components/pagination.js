@@ -14,7 +14,7 @@ function Pagination({ pagination, onPageChange, onPageSizeChanged }) {
             if (item !== '...') {
                 return (
                     <li
-                        className={item == page ? 'active' : ''}
+                        className={item === page ? 'active' : ''}
                         key={item}
                         onClick={() => onPageChange(item)}
                     >{item}
