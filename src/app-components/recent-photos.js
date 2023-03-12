@@ -42,7 +42,7 @@ function RecentPhotos() {
         return () => {
             console.log('unmounted');
         }
-    }, [data, pagination.sibling_count, setSearchParams])
+    }, [data, pagination.sibling_count])
 
     const pageChanged = (page) => {
         const tempPagination = {

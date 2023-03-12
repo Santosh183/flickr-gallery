@@ -52,7 +52,7 @@ function TaggedPhotos() {
         return () => {
             console.log('unmounted');
         }
-    }, [data, pagination.sibling_count, searchParams, setSearchParams])
+    }, [data, pagination.sibling_count])
 
     const onSearch = (e) => {
         e.preventDefault();
