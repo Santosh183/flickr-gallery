@@ -1,6 +1,7 @@
 # flickr-gallery
 Simple gallery which fetch photos form flickr APIs.
-One can search with tag or simply see recently uploaded photos.
+One can search with tag or simply see recently uploaded photos
+It has pagination functionlity which is in sync with API data.
 Can see demo  here: https://santosh183.github.io/flickr-gallery/
 
 # Hands on for :
